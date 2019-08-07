@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <script>
+            var androidPackage = "com.vtex.naturestudy";
+            var appleAppId = ""; // id1401934913 형식으로 itunes url에 나오는 앱아이디.
+            var androidMarketUrl = "market//detail?id=" + androidPackage;
+            var iosMarketUrl = "http://itunes.apple.com/kr/app/" + appleAppID;
+
+            function goStore() {
+            var startTime = +new Date();
+            setTimeout(
+                function() {
+                var now = +new Date();
+                if (now - startTime < 1000) {
+                    var marketUrl = "";
+                    if (isAndroid) {
+                    marketUrl = androidMarketUrl;
+                    } else if (isiOS) {
+                    marketUrl = iosMarketUrl;
+                    }
+                    location.href = marketUrl;
+                }, 500) if (isAndroid) {
+                openAndroid();
+                } else if (isiOS) {
+                openiOS();
+                }
+            }
+
+            function openAndroid() {
+                var userAgent = navigator.userAgent.toLowerCase();
+                if (userAgent.match(/chrome/)) {
+                location.href = "intent://hostName?param1=someValue1¶m2=someValue2/" +
+                    "#Intent;scheme=schemeName;action=android.intent.action.VIEW;" +
+                    "category=android.Intent.category.BROWSABLE;package=" + androidPackage;
+                } else {
+                var iframe = document.createElement('iframe');
+                iframe.style.visivility = 'hidden';
+                iframe.src = 'schemeName://hostName?param1=someValue1¶m2=someValue2';
+                document.body.appendChild(iframe);
+                document.body.removeChild(iframe);
+                }
+            }
+
+            function openiOS() {
+                location.href = "schemeName://hostName?param1=someValue1¶m2=someValue2";
+            }
+
+        </script>
+
+        <body>
+            <a href="javascript:openAndroid();">test </a>
+        </body>
+    </head>
