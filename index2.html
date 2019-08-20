@@ -43,10 +43,12 @@ function goStore(p1,p2){
                 
                 var userAgent = navigator.userAgent.toLowerCase();
                 if (userAgent.match(/chrome/)) {
+                    alert('chrome');
                 location.href = "intent://hglobepoint?" +p1+","+p2+
                     "#Intent;scheme=sglobepoint;action=android.intent.action.VIEW;" +
                     "category=android.Intent.category.BROWSABLE;package=" + androidPackage;
                 } else {
+                    alert('iframe');
                 var iframe = document.createElement('iframe');
                 iframe.style.visivility = 'hidden';
                 iframe.src = 'schemeName://hglobepoint?'+p1+','+p2;
