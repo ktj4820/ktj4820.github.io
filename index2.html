@@ -31,10 +31,10 @@ function goStore(p1,p2){
         }
     , 500);
     if ( isAndroid ){
-        alert('android call');
+        alert('android call2');
         openAndroid(p1,p2);
     }else if ( isiOS ){
-        alert('ios call');
+        alert('ios call2');
         openiOS(p1,p2);
     }
 }
@@ -43,7 +43,7 @@ function goStore(p1,p2){
                 
                 var userAgent = navigator.userAgent.toLowerCase();
                 if (userAgent.match(/chrome/)) {
-                    alert('chrome2');
+                    alert('chrome3');
                     url = "intent://hglobepoint?" +p1+","+p2+
                     "#Intent;scheme=sglobepoint;action=android.intent.action.VIEW;" +
                     "category=android.Intent.category.BROWSABLE;package=" + androidPackage;
