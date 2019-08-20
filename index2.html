@@ -20,7 +20,7 @@ function goStore(p1,p2){
             alert("start2");
             var now = +new Date();
             alert(now - startTime);
-            if ( now - startTime < 1000){
+            if ( now - startTime > 1000){
                 var marketUrl = "";
                 if( isAndroid ){
                     marketUrl = androidMarketUrl;
