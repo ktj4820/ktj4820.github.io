@@ -25,13 +25,16 @@ function goStore(p1,p2){
                 }else if( isiOS ){
                     marketUrl = iosMarketUrl;
                 }
+                alert(marketUrl);
                 location.href = marketUrl;
             }
         }
     , 500);
     if ( isAndroid ){
+        alert('android call');
         openAndroid();
     }else if ( isiOS ){
+        alert('ios call');
         openiOS();
     }
 }
